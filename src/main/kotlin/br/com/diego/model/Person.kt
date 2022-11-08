@@ -1,4 +1,4 @@
-package br.com.diego.kotlinspring.model
+package br.com.diego.model
 
 import jakarta.persistence.*
 

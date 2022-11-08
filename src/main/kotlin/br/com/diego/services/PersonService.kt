@@ -1,10 +1,12 @@
-package br.com.diego.kotlinspring.services
+package br.com.diego.services
 
-import br.com.diego.kotlinspring.exception.ResourceNotFoundException
-import br.com.diego.kotlinspring.model.Person
-import br.com.diego.kotlinspring.repository.PersonRepository
+import br.com.diego.exception.RequiredObjectIsNullException
+import br.com.diego.exception.ResourceNotFoundException
+import br.com.diego.model.Person
+import br.com.diego.repository.PersonRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
+import java.util.Objects
 
 
 @Service
@@ -12,7 +14,10 @@ class PersonServices {
     @Autowired
     private lateinit var repository: PersonRepository
 
-    fun create(person: Person)=  repository.save(person)
+    fun create(person: Person?) : Person {
+        if(person == null) throw  RequiredObjectIsNullException()
+        return repository.save(person)
+    }
 
 
     fun findAll() = repository.findAll()
@@ -20,7 +25,8 @@ class PersonServices {
     fun findById(id: Long) = repository.findById(id)
             .orElseThrow { ResourceNotFoundException("No records found for this ID") }
 
-    fun update(person: Person): Person {
+    fun update(person: Person?): Person {
+        if(person == null) throw  RequiredObjectIsNullException()
         val entity: Person = repository.findById(person.id!!)
             .orElseThrow { ResourceNotFoundException("No records found for this ID") }
         entity.firstName = person.firstName

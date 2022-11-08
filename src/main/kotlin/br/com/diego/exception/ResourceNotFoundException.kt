@@ -1,4 +1,4 @@
-package br.com.diego.kotlinspring.exception
+package br.com.diego.exception
 
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.ResponseStatus

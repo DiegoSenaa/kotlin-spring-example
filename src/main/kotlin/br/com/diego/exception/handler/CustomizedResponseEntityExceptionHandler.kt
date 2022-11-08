@@ -1,7 +1,7 @@
-package br.com.diego.kotlinspring.exception.handler
+package br.com.diego.exception.handler
 
-import br.com.diego.kotlinspring.exception.ExceptionResponse
-import br.com.diego.kotlinspring.exception.ResourceNotFoundException
+import br.com.diego.exception.ExceptionResponse
+import br.com.diego.exception.ResourceNotFoundException
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ControllerAdvice

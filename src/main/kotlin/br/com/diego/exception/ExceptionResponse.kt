@@ -1,4 +1,4 @@
-package br.com.diego.kotlinspring.exception
+package br.com.diego.exception
 
 import java.io.Serializable
 import java.util.*

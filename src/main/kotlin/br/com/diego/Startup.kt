@@ -1,4 +1,4 @@
-package br.com.diego.kotlinspring
+package br.com.diego
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

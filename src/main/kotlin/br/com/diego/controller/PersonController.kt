@@ -1,7 +1,7 @@
-package br.com.diego.kotlinspring.controller
+package br.com.diego.controller
 
-import br.com.diego.kotlinspring.model.Person
-import br.com.diego.kotlinspring.services.PersonServices
+import br.com.diego.model.Person
+import br.com.diego.services.PersonServices
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -28,6 +28,6 @@ class PersonController {
     @DeleteMapping("/{id}")
     fun delete(@PathVariable("id") id: Long): ResponseEntity<*> {
         service.delete(id)
-        return ResponseEntity.ok().build<Any>()
+        return ResponseEntity.noContent().build<Any>()
     }
 }
